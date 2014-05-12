@@ -1,4 +1,4 @@
-$(window).ready(function () {
+$(document).ready(function () {
 
 	// 7 and WORD
 
@@ -26,7 +26,6 @@ $(window).ready(function () {
 		  itemSelector: '.item'
 		});
 
-		msnry.layout();
 	});
 
 	$.getJSON("data/projects.json", function(data) { 
@@ -50,6 +49,8 @@ $(window).ready(function () {
 			$("#project"+i+"").css("background", "url('img/"+projects[i].images[0]+"')");
 			$("#project"+i+"").css("background-size", "cover");
 			$("#project"+i+"").css("background-position", "center");
+
+			msnry.layout();
 		};
 
 	}
