@@ -32,6 +32,7 @@ $(document).ready(function () {
 		var projects = data;
 		// console.log(projects[0].images[0]);	
 		appendProjects(projects);
+		msnry.layout();
 
 	});
 
