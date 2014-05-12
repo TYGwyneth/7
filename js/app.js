@@ -25,6 +25,8 @@ $(document).ready(function () {
 		  columnWidth: 33,
 		  itemSelector: '.item'
 		});
+
+		msnry.layout();
 	});
 
 	$.getJSON("data/projects.json", function(data) { 
@@ -32,7 +34,6 @@ $(document).ready(function () {
 		var projects = data;
 		// console.log(projects[0].images[0]);	
 		appendProjects(projects);
-		msnry.layout();
 
 	});
 
@@ -50,6 +51,7 @@ $(document).ready(function () {
 			$("#project"+i+"").css("background-size", "cover");
 			$("#project"+i+"").css("background-position", "center");
 		};
+
 	}
 
 	// Quote
