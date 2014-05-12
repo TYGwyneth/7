@@ -15,9 +15,10 @@ $(document).ready(function () {
 
 	// PROJECTS
 
-	var msnry = new Masonry( container );
-// layout Masonry again after all images have loaded
-imagesLoaded( container, function() {
+	var container = document.querySelector('#container');
+	var msnry;
+	// initialize Masonry after all images have loaded
+	imagesLoaded( container, function() {
 
 		msnry = new Masonry( container, {
 		  // options
