@@ -77,6 +77,7 @@ a:active {color:#FFF; text-decoration: none;}  /* selected link */
 	margin: 0px auto;
 	margin-top: 80px;
 	margin-bottom: 80px;
+	overflow: hidden;
 	/*background: black;*/
 }	
 
