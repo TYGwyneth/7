@@ -120,10 +120,12 @@ a:active {color:#FFF; text-decoration: none;}  /* selected link */
 .item.w1 { 
 	width: 33%;
 	height: 150px;
+	float:left;
 }	
 .item.w2 {
 	width: 33%;
 	height: 300px;
+	float:left;
 }
 
 #quoteWrap {

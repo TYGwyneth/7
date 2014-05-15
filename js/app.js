@@ -15,18 +15,19 @@ $(document).ready(function () {
 
 	// PROJECTS
 
-	var container = document.querySelector('#container');
-	var msnry;
-	// initialize Masonry after all images have loaded
-	imagesLoaded( container, function() {
+	// var container = document.querySelector('#container');
+	// var msnry;
+	// // initialize Masonry after all images have loaded
+	// imagesLoaded( container, function() {
 
-		msnry = new Masonry( container, {
-		  // options
-		  columnWidth: 33,
-		  itemSelector: '.item'
-		});
-		msnry.layout();
-	});
+	// 	msnry = new Masonry( container, {
+	// 	  // options
+	// 	  columnWidth: 33,
+	// 	  itemSelector: '.item'
+	// 	});
+
+	// 	msnry.layout();
+	// });
 
 	$.getJSON("data/projects.json", function(data) { 
 		
@@ -50,19 +51,18 @@ $(document).ready(function () {
 			$("#project"+i+"").css("background-size", "cover");
 			$("#project"+i+"").css("background-position", "center");
 		};
-
 	}
 
 	// Quote
 
 	var quotes = ([
 
-		"It would be easier to aquire a camel than the girl of my dreams",
-		"bla bla bla",
+		"It's easier to aquire a camel than the girl of my dreams",
+		"it's not a good quote, I've heard it too many times",
+		"I don't wanna be in a meeting because of my body parts",
 
 	]);
 	var quote = Math.floor((Math.random()*quotes.length));
 	document.getElementById("quoteInner").innerHTML = '<p>"'+quotes[quote]+'"</p>'
-
 
 });
