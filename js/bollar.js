@@ -193,14 +193,14 @@ function onWindowDeviceOrientation( event ) {
 
 function createInstructions(images, i ) {
 
-	var size = 200;
+	var size = 150;
 
 	var element = document.createElement( 'div' );
 	element.width = size;
 	element.height = size;	
 	element.style.position = 'absolute';
-	element.style.left = -200 + 'px';
-	element.style.top = -200 + 'px';
+	element.style.left = -150 + 'px';
+	element.style.top = -150 + 'px';
 	element.style.cursor = "default";
 
 	canvas.appendChild(element);
@@ -225,7 +225,7 @@ function createInstructions(images, i ) {
 	text = document.createElement( 'div' );
 	text.onSelectStart = null;
 	// text.innerHTML = '<span style="color:' + theme[0] + ';font-size:40px; ">Hello!</span><br /><br /><span style="font-size:15px;"><strong>This is how it works:</strong><br /><br />1. Drag a ball.<br />2.&nbsp;Click&nbsp;on&nbsp;the&nbsp;background.<br />3. Shake your browser.<br />4. Double click.<br />5. Play!</span>';
-	text.innerHTML = '<div style="width:200px; height:200px; background:url('+images[i]+'); background-size:cover; border-radius:125px;"></div>'
+	text.innerHTML = '<div style="width:150px; height:150px; background:url('+images[i]+'); background-size:cover; border-radius:125px;"></div>'
 	text.style.color = theme[1];
 	text.style.position = 'absolute';
 	text.style.left = '0px';
@@ -234,8 +234,8 @@ function createInstructions(images, i ) {
 	text.style.textAlign = 'center';
 	element.appendChild(text);
 
-	text.style.left = ((200 - text.clientWidth) / 2) +'px';
-	text.style.top = ((200 - text.clientHeight) / 2) +'px';	
+	text.style.left = ((150 - text.clientWidth) / 2) +'px';
+	text.style.top = ((150 - text.clientHeight) / 2) +'px';	
 
 	var b2body = new b2BodyDef();
 
