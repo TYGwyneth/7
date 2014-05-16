@@ -86,7 +86,7 @@ function reset() {
 	bodies = [];
 	elements = [];
 
-	var images = ["img/alvin.jpg","img/lauren.jpg","img/marius.jpg"];
+	var images = ["img/Alvin.jpg","img/Lauren.jpg","img/Marius.jpg","img/Petter.jpg","img/Alex.jpg","img/Daniel.jpg","img/Max.jpg"];
 	
 	for (var i = 0; i < images.length; i++) {
 		console.log(images[i]);
