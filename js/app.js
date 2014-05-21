@@ -1,5 +1,21 @@
 $(document).ready(function () {
 
+	// HEADER
+
+	$(window).scroll(function() {
+		if($(window).scrollTop()>100){
+			$("#logoBox").css({"width":"50"});
+			$("#logoBox").css({"padding":"15"});
+			$("#logo").css({"height":"40"});
+			$("#logo").css({"width":"40"});
+		}else{
+			$("#logoBox").css({"width":"100%"});
+			$("#logoBox").css({"padding":"0"});
+			$("#logo").css({"height":"60"});
+			$("#logo").css({"width":"60"});
+		}
+	});
+
 	// 7 and WORD
 
 	var words = (["Interactions","Sins","Dwarfs","Samurais","Creations","Wonders","Wolfs","Days a Week","Feminists","the fourth prime","Colors of the Rainbow","Seas","Continents","Heavens","UP","Seal","&7","Potters","Ages of Man"]);

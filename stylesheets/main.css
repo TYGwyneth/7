@@ -23,6 +23,34 @@ a:active {color:#FFF; text-decoration: none;}  /* selected link */
 	height: 100%;
 }
 
+#header {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	bottom: 0px;
+}
+
+#logoBox {
+	position: absolute;
+	width: 100%;
+	height: 80px;
+	background: transparent;
+
+	-webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    -ms-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+#logo {
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	background: url("../img/logo2.png");
+	background-size: 100% 100%;
+}
+
 #sevenWrap {
 	height: 850px;
 	background: #000000;
@@ -195,8 +223,8 @@ a:active {color:#FFF; text-decoration: none;}  /* selected link */
 }
 
 #aboutInner {
-	padding: 80px;
-	padding-top: 25%;
+	padding: 120px;
+	padding-top: 22%;
 	font-size: 0.5em;
 	color: #FFF;
 	font-weight: 100;
