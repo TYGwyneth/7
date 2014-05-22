@@ -26,14 +26,14 @@ a:active {color:#FFF; text-decoration: none;}  /* selected link */
 #header {
 	position: fixed;
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	bottom: 0px;
 }
 
 #logoBox {
 	position: absolute;
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	background: transparent;
 
 	-webkit-transition: all 0.15s linear;
@@ -44,8 +44,8 @@ a:active {color:#FFF; text-decoration: none;}  /* selected link */
 }
 
 #logo {
-	width: 60px;
-	height: 60px;
+	width: 20px;
+	height: 20px;
 	margin: 0 auto;
 	background: url("../img/logo2.png");
 	background-size: 100% 100%;

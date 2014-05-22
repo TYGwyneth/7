@@ -4,15 +4,18 @@ $(document).ready(function () {
 
 	$(window).scroll(function() {
 		if($(window).scrollTop()>100){
+			$("#header").css({"height":"80"});
 			$("#logoBox").css({"width":"50"});
-			$("#logoBox").css({"padding":"15"});
+			$("#logoBox").css({"height":"80"});
+			$("#logoBox").css({"padding":"25"});
+			$("#logoBox").css({"right":"0"});
 			$("#logo").css({"height":"40"});
 			$("#logo").css({"width":"40"});
 		}else{
 			$("#logoBox").css({"width":"100%"});
 			$("#logoBox").css({"padding":"0"});
-			$("#logo").css({"height":"60"});
-			$("#logo").css({"width":"60"});
+			$("#logo").css({"height":"20"});
+			$("#logo").css({"width":"20"});
 		}
 	});
 
