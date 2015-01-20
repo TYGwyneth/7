@@ -442,8 +442,7 @@ p {
 }
 
 #aboutImg {
-	width: 150px;
-	height: 150px;
+	visibility: hidden;
 }	
 
 
