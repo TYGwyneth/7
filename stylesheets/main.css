@@ -398,12 +398,30 @@ p {
 
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-device-width: 667px) {
+
+#viewContainer {
+	max-width: 440px;
+	height: 440px;
+	overflow: auto;
+}
+
+#viewContainerWrap {
+	max-width: 540px;
+	/*top: 43.9%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);*/
+}
+
+.arrows {
+	visibility: hidden;
+}	
 
 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
 
 
 }
