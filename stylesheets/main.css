@@ -401,8 +401,30 @@ p {
 @media only screen and (max-device-width: 667px) {
 
 #viewContainer {
-	max-width: 440px;
-	height: 440px;
+	max-width: 540px;
+	overflow: auto;
+}
+
+#viewContainerWrap {
+	max-width: 540px;
+	/*top: 43.9%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);*/
+}
+
+.arrows {
+	visibility: hidden;
+}	
+
+
+}
+
+@media only screen and (max-device-width: 667px) and (orientation : landscape) {
+
+#viewContainer {
+	max-width: 540px;
+	height: 320px;
 	overflow: auto;
 }
 
