@@ -406,11 +406,7 @@ p {
 }
 
 #viewContainerWrap {
-	/*max-width: 650px;*/
-	/*top: 43.9%;
-  	-webkit-transform: translateY(-50%);
-  	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);*/
+	
 }
 
 .arrows {
@@ -430,10 +426,6 @@ p {
 
 #viewContainerWrap {
 	max-width: 540px;
-	/*top: 43.9%;
-  	-webkit-transform: translateY(-50%);
-  	-ms-transform: translateY(-50%);
-  	transform: translateY(-50%);*/
 }
 
 .arrows {
@@ -442,6 +434,16 @@ p {
 
 .content {
 	height: 320px;
+}
+
+#aboutText {
+	font-size: 16px;
+	max-width: 350px;
+}
+
+#aboutImg {
+	width: 150px;
+	height: 150px;
 }	
 
 
