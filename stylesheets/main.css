@@ -439,9 +439,12 @@ p {
 #aboutText {
 	font-size: 16px;
 	max-width: 350px;
+	padding: 0px;
 }
 
 #aboutImg {
+	height: 0px;
+	width: 0px;
 	visibility: hidden;
 }	
 
