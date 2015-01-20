@@ -401,12 +401,12 @@ p {
 @media only screen and (max-device-width: 667px) {
 
 #viewContainer {
-	max-width: 540px;
+	max-width: 650px;
 	overflow: auto;
 }
 
 #viewContainerWrap {
-	max-width: 540px;
+	/*max-width: 650px;*/
 	/*top: 43.9%;
   	-webkit-transform: translateY(-50%);
   	-ms-transform: translateY(-50%);
@@ -438,6 +438,10 @@ p {
 
 .arrows {
 	visibility: hidden;
+}
+
+.content {
+	height: 320px;
 }	
 
 
