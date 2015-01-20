@@ -1,157 +1,87 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-  gradient();
-  getContent();
-  initHiddenStuff();
+	// HEADER
 
-  $("#left").click(function () { 
-    var leftPos = $('#viewContainer').scrollLeft();
-    $("#viewContainer").animate({scrollLeft: leftPos - 500}, 800);
-  });
+	$(window).scroll(function() {
+		if($(window).scrollTop()>100){
+			$("#header").css({"height":"80"});
+			$("#logoBox").css({"width":"50"});
+			$("#logoBox").css({"height":"80"});
+			$("#logoBox").css({"padding":"25"});
+			$("#logoBox").css({"right":"0"});
+			$("#logo").css({"height":"40"});
+			$("#logo").css({"width":"40"});
+		}else{
+			$("#logoBox").css({"width":"100%"});
+			$("#logoBox").css({"padding":"0"});
+			$("#logo").css({"height":"20"});
+			$("#logo").css({"width":"20"});
+		}
+	});
 
-  $("#right").click(function () { 
-    var leftPos = $('#viewContainer').scrollLeft();
-    $("#viewContainer").animate({scrollLeft: leftPos + 500}, 800);
-  });
+	// 7 and WORD
 
-  $("#xxx").click(function () { 
-    $("#viewContainer").animate({scrollLeft: 0}, 800);
-  });
+	var words = (["Interactions","Sins","Dwarfs","Samurais","Creations","Wonders","Wolfs","Days a Week","Feminists","the fourth prime","Colors of the Rainbow","Seas","Continents","Heavens","UP","Seal","&7","Potters","Ages of Man"]);
+	var word = Math.floor((Math.random()*words.length));
+	document.getElementById("wordBox").innerHTML = "<p>"+words[word]+"</p>"
+	$("#wordBox").animate({
+	    opacity: 0,
+	    left: "+=50",
+	    // height: "toggle"
+	  }, 1200, function() {
+	    // Animation complete.
+	  });
+
+	// PROJECTS
+
+	// var container = document.querySelector('#container');
+	// var msnry;
+	// // initialize Masonry after all images have loaded
+	// imagesLoaded( container, function() {
+
+	// 	msnry = new Masonry( container, {
+	// 	  // options
+	// 	  columnWidth: 33,
+	// 	  itemSelector: '.item'
+	// 	});
+
+	// 	msnry.layout();
+	// });
+
+	$.getJSON("data/projects.json", function(data) { 
+		
+		var projects = data;
+		// console.log(projects[0].images[0]);	
+		appendProjects(projects);
+
+	});
+
+	function appendProjects(projects){
+
+		var projects = projects;
+		console.log(projects.length);
+
+		for (var i = 0; i < projects.length; i++) {
+			var imageType = Math.floor((Math.random()*2)+1);
+			// console.log(projects);
+			var project = '<div class="item w'+imageType+'" id="project'+i+'"><p>'+projects[i].title+'</p></div>';
+			$("#container").append(project);
+			$("#project"+i+"").css("background", "url('img/"+projects[i].images[0]+"')");
+			$("#project"+i+"").css("background-size", "cover");
+			$("#project"+i+"").css("background-position", "center");
+		};
+	}
+
+	// Quote
+
+	var quotes = ([
+
+		"It's easier to aquire a camel than the girl of my dreams",
+		"it's not a good quote, I've heard it too many times",
+		"I don't wanna be in a meeting because of my body parts",
+
+	]);
+	var quote = Math.floor((Math.random()*quotes.length));
+	document.getElementById("quoteInner").innerHTML = '<p>"'+quotes[quote]+'"</p>'
 
 });
-
-function getContent(){
-
-  $.getJSON( "json/content.json", function( data ) {
-    //console.log(data);
-    $.each( data.contents, function( index, content ) {
-      console.log(content);
-      content = '<a href="'+content.link+'"><div class="content" id="content'+content.id+'" style="background-image: url(img/contents/'+content.img+')"><h1>'+content.title+'</h1></div></a>'
-      $('#viewContainer').prepend(content);
-    });
-  });
-
-};
-
-function gradient(){
-
-    // Gradient Thingy
-
-        var colors = new Array(
-          [9,12,155],
-          [61,82,213],
-          [180,197,228],
-          [251,255,241]);
-          // [254,95,85]);
-
-        var step = 0;
-        //color table indices for: 
-        // current color left
-        // next color left
-        // current color right
-        // next color right
-        var colorIndices = [0,1,2,3];
-
-        //transition speed
-        var gradientSpeed = 0.002;
-
-        function updateGradient()
-        {
-        var c0_0 = colors[colorIndices[0]];
-        var c0_1 = colors[colorIndices[1]];
-        var c1_0 = colors[colorIndices[2]];
-        var c1_1 = colors[colorIndices[3]];
-
-        var istep = 1 - step;
-        var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-        var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-        var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-        var color1 = "#"+((r1 << 16) | (g1 << 8) | b1).toString(16);
-
-        var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-        var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-        var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-        var color2 = "#"+((r2 << 16) | (g2 << 8) | b2).toString(16);
-
-         $('#mainWrap').css({
-           borderImage: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+")) 14% stretch"}).css({
-            borderImage: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%) 14% stretch"});
-
-          step += gradientSpeed;
-          if ( step >= 1 )
-          {
-            step %= 1;
-            colorIndices[0] = colorIndices[1];
-            colorIndices[2] = colorIndices[3];
-            
-            //pick two new target color indices
-            //do not pick the same as the current one
-            colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-            colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-            
-          }
-        }
-
-        setInterval(updateGradient,10);
-
-};
-
-function initHiddenStuff(){
-  $("#spotify").hide();
-  $("#soundcloud").hide();
-
-  $("#").click(function() {
-    $("#spotify").fadeIn();
-    $("#soundcloud").fadeIn();
-    animateDiv();
-    animateDiv2();
-  });
-}
-
-function makeNewPosition(){
-    
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 200;
-    var w = $(window).width() - 200;
-    
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-    
-    return [nh,nw];    
-    
-};
-
-function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('#spotify').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
-    $('#spotify').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();        
-    });    
-};
-
-function animateDiv2(){
-    var newq = makeNewPosition();
-    var oldq = $('#soundcloud').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
-    $('#soundcloud').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv2();        
-    });    
-};
-
-function calcSpeed(prev, next) {
-    
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-    
-    var greatest = x > y ? x : y;
-    
-    var speedModifier = 0.7;
-
-    var speed = Math.ceil(greatest/speedModifier);
-
-    return speed;
-
-};
